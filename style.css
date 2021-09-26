@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap');
+
+:root {
+    --bright-red: hsl(12, 88%, 59%);
+    --dark-blue: hsl(228, 39%, 23%);
+    --dark-grayish-blue: hsl(227, 12%, 61%);
+    --very-dark-blue: hsl(233, 12%, 13%);
+    --very-pale-red: hsl(13, 100%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+body {
+    color: var(--dark-grayish-blue);
+    line-height: 1.66;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 40px;
+    color: var(--dark-blue);
+    line-height: 1.22;
+}
+
+h2 {
+    font-size: 30px;
+    color: var(--dark-blue);
+    line-height: 1.44;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    color: var(--very-light-gray);
+    font-weight: 700;
+    background: var(--bright-red);
+    padding: 1em 2.22em;
+    border-radius: 50em;
+    box-shadow: 0 12px 17px -10px var(--bright-red);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+.hero {
+    padding-bottom: 99px;
+    background:
+        url(images/bg-tablet-pattern.svg) no-repeat calc(20vw + 44%) -147px / calc(390px + 14vw),
+        url(images/bg-tablet-pattern.svg) no-repeat calc(66vw - 17%) bottom / calc(300px + 10vw);
+    
+}
+
+.hero-img {
+    padding: 77px 0 0;
+    width: clamp(300px, 86%, 432px);
+    margin: 0 auto;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 0 4%;
+}
+
+.hero-content h1 {
+    max-width: 20ch;
+    margin: 0 auto;
+}
+
+.hero-content p {
+    padding: 11px 17px 33px;
+    max-width: 55ch;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.about {
+    counter-reset: about-items;
+}
+
+.about-text {
+    text-align: center;
+    padding: 0 7% 4px;
+}
+
+.about-text p {
+    margin: 15px 0;
+}
+
+.about-item {
+    margin-top:54px;
+}
+
+.about-item-title {
+    background: var(--very-pale-red);
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-left: 4%;
+    padding: 6px 6px 6px 85px;
+    border-radius: 50em 0 0 50em;
+    position: relative;
+}
+.about-item-title::before {
+    counter-increment: about-items;
+    content: '0' counter(about-items);
+    padding: 0 25px;
+    background: var(--bright-red);
+    border-radius: 50em;
+    color: var(--very-light-gray);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-item-text {
+    padding: 0 4%;
+    margin-top: 15px;
+    max-width: 75ch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.testimonials {
+    text-align: center;
+    margin: 74px 0 37px;
+}
+
+.testimonials-slider {
+    margin-top: 99px;
+}
+
+.testimonials-slider-item {
+    background: var(--very-light-gray);
+    padding-bottom: 37px;
+}
+
+.testimonials-slider-item img {
+    height: 79px;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+.author {
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin: -9px 0 5px;
+}
+
+.quote {
+    padding: 0 7%;
+}
+
+
+
+
+
+
+
+
+
+
+.cta {
+    background: url(/images/bg-simplify-section-mobile.svg) no-repeat left / auto 255px, var(--bright-red);
+    text-align: center;
+    padding: 79px 7%;
+}
+
+.cta h1 {
+    color: var(--very-light-gray);
+}
+
+.cta button {
+    color: var(--bright-red);
+    background: var(--very-light-gray);
+    box-shadow: 0 12px 19px -19px var(--very-dark-blue);
+    margin-top: 27px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: var(--very-dark-blue);
+    padding: 37px 7% 29px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    max-width: 777px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    border-radius: 50em;
+    flex: 1;
+    padding: 0 12px 0 21px;
+}
+
+.newsletter-form button {
+    box-shadow: none;
+}
+
+.nav-links {
+    columns: 2;
+    margin: 44px auto 0;
+    gap: 0;
+    max-width: 333px;
+}
+
+.nav-links li {
+    width: 100px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    color: var(--very-light-gray);
+    display: block;
+    padding: 4px 0;
+    width: max-content;
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 44px auto 0;
+    max-width: 333px;
+}
+
+.social-links-icon {
+    height: 32px;
+}
+
+footer .logo {
+    margin: 0 auto;
+    width: max-content;
+    margin-top: 44px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 33px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 888px) {
+    body {
+    background:
+        url(/images/bg-tablet-pattern.svg) no-repeat 53vw -18vw / 57vw,
+        url(/images/bg-tablet-pattern.svg) no-repeat -37vw 72vw / 57vw;
+    }
+
+    .hero {
+        background: none;
+        padding: 144px 10% 99px;
+        display: flex;
+    }
+    .hero-content {
+        all: revert;
+        flex: 1;
+        align-self: center;
+    }
+    .hero-content h1 {
+        max-width: 16ch;
+        margin: 0;
+    }
+    .hero-content p {
+        padding: 33px 0;
+        max-width: 36ch;
+        margin: 0;
+    }
+    .hero-img {
+        order: 2;
+        padding: 0;
+        flex: 1;
+        align-self: start;
+    }
+    
+    .about {
+        display: flex;
+        padding: 0 10%;
+    }
+    .about-text {
+        text-align: left;
+        padding: 61px 4% 0 0;
+        flex: 1;
+    }
+    .about-text p {
+        max-width: 37ch;
+    }
+    .about-items {
+        flex: 1;
+    }
+    .about-item-title {
+        background: none;
+    }
+    .about-item-title::before {
+        height: 38px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 10%;
+        text-align: left;
+        background: url(/images/bg-simplify-section-desktop.svg) no-repeat 15vw -122px, var(--bright-red);
+    }
+    .cta h1 {
+        max-width: 22ch;
+    }
+
+    footer {
+    padding: 37px 10% 29px;
+    }
+}
+
+
+@media (min-width: 1222px) {
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .about-text h2 {
+        font-size: 38px;
+    }
+
+    footer {
+        display: grid;
+        grid-template: auto auto / 1fr 1.66fr 1fr;
+        padding: 66px 10%;
+    }
+    footer .logo {
+        order: 0;
+        margin: 0;
+    }
+    .nav-links {
+        order: 1;
+        grid-row: span 2;
+        margin: 0;
+    }
+    .nav-links li {
+        margin: 0;
+    }
+    .newsletter-form {
+        order: 2;
+        align-self: start;
+        margin: 0;
+    }
+    .social-links {
+        order: 3;
+        margin: 44px 0 0;
+        transform: scale(.7);
+        transform-origin: left bottom;
+    }
+    .copyright {
+        order: 4;
+        align-self: end;
+        text-align: right;
+    }
+}

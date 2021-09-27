@@ -7,6 +7,8 @@
     --very-dark-blue: hsl(233, 12%, 13%);
     --very-pale-red: hsl(13, 100%, 96%);
     --very-light-gray: hsl(0, 0%, 98%);
+
+    --header-height: 120px;
 }
 
 *, ::before, ::after {
@@ -39,7 +41,7 @@ img {
     display: block;
 }
 
-ul {
+ul, li {
     list-style: none;
 }
 
@@ -54,7 +56,89 @@ button {
     padding: 1em 2.22em;
     border-radius: 50em;
     box-shadow: 0 12px 17px -10px var(--bright-red);
+    white-space: nowrap;
     cursor: pointer;
+}
+button:hover {
+    opacity: .88;
+}
+button img {
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+header {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(#0000, #0009);
+    display: none;
+    z-index: 50;
+}
+.menu-active .nav-overlay {
+    display: block;
+}
+
+.nav-overlay nav {
+    width: max-content;
+    margin: 0 auto;
+}
+
+header nav ul {
+    width: 86vw;
+    max-width: 399px;
+    padding: 15px 0;
+    margin: 122px 0;
+    border-radius: 7px;
+    background: white;
+}
+
+header nav a {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    color: var(--dark-blue);
+    padding: 12px 0;
+}
+header nav a:hover {
+    background: #0001;
+}
+
+.menu-open-btn,
+.menu-close-btn {
+    border: 0;
+    background: none;
+    padding: 6px;
+    z-index: 51;
+    box-shadow: none;
+}
+.menu-close-btn {
+    display: none;
+}
+.menu-active .menu-open-btn {
+    display: none;
+}
+.menu-active .menu-close-btn {
+    display: block;
+}
+
+.get-started {
+    display: none;
 }
 
 
@@ -65,15 +149,14 @@ button {
 
 
 .hero {
-    padding-bottom: 99px;
+    padding: var(--header-height) 0 99px;
     background:
-        url(images/bg-tablet-pattern.svg) no-repeat calc(20vw + 44%) -147px / calc(390px + 14vw),
+        url(images/bg-tablet-pattern.svg) no-repeat calc(20vw + 44%) -104px / calc(390px + 14vw),
         url(images/bg-tablet-pattern.svg) no-repeat calc(66vw - 17%) bottom / calc(300px + 10vw);
     
 }
 
 .hero-img {
-    padding: 77px 0 0;
     width: clamp(300px, 86%, 432px);
     margin: 0 auto;
 }
@@ -264,12 +347,18 @@ footer {
     padding: 4px 0;
     width: max-content;
 }
+.nav-links a:hover {
+    color: var(--bright-red);
+}
 
 .social-links {
     display: flex;
     justify-content: space-between;
     margin: 44px auto 0;
     max-width: 333px;
+}
+.social-links a:hover {
+    filter: invert(43%) sepia(15%) saturate(4787%) hue-rotate(337deg) brightness(105%) contrast(90%);
 }
 
 .social-links-icon {
@@ -306,15 +395,24 @@ footer .logo {
 
 
 @media (min-width: 888px) {
+    :root {
+        --header-height: 179px;
+    }
     body {
     background:
-        url(/images/bg-tablet-pattern.svg) no-repeat 53vw -18vw / 57vw,
-        url(/images/bg-tablet-pattern.svg) no-repeat -37vw 72vw / 57vw;
+        url(/images/bg-tablet-pattern.svg) no-repeat 53vw -14vw / 57vw,
+        url(/images/bg-tablet-pattern.svg) no-repeat -37vw 76vw / 57vw;
+    }
+
+    header {
+        left: 10%;
+        right: 10%;
     }
 
     .hero {
         background: none;
-        padding: 144px 10% 99px;
+        padding-left: 10%;
+        padding-right: 10%;
         display: flex;
     }
     .hero-content {
@@ -376,6 +474,37 @@ footer .logo {
 
     footer {
     padding: 37px 10% 29px;
+    }  
+}
+
+
+@media (min-width: 1055px) {
+    .nav-overlay {
+        all: revert;
+    }
+    header nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background: none;
+        all: revert;
+        display: flex;
+    }
+    header nav a {
+        margin: -9px 17px 0;
+        padding: 2px 0;
+        white-space: nowrap;
+    }
+    header nav a:hover {
+        background: none;
+        color: var(--dark-grayish-blue);
+    }
+    .menu-open-btn,
+    .menu-close-btn {
+        display: none !important;
+    }
+    .get-started {
+        display: block;
     }
 }
 

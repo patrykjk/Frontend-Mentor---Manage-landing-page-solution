@@ -19,10 +19,13 @@
     font-family: 'Be Vietnam', sans-serif;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     color: var(--dark-grayish-blue);
     line-height: 1.66;
-    overflow-x: hidden;
 }
 
 h1 {
@@ -153,7 +156,6 @@ header nav a:hover {
     background:
         url(images/bg-tablet-pattern.svg) no-repeat calc(20vw + 44%) -104px / calc(390px + 14vw),
         url(images/bg-tablet-pattern.svg) no-repeat calc(66vw - 17%) bottom / calc(300px + 10vw);
-    
 }
 
 .hero-img {
@@ -249,9 +251,23 @@ header nav a:hover {
     margin-top: 99px;
 }
 
+.slides-container {
+    display: flex;
+    transform: translateX(calc(var(--position) * -1px));
+    transition: transform 444ms;
+}
+
+.no-animation {
+    transition: none;
+}
+
 .testimonials-slider-item {
     background: var(--very-light-gray);
     padding-bottom: 37px;
+    min-width: 100vw;
+}
+.testimonials-slider-item:not(.active) {
+    cursor: pointer;
 }
 
 .testimonials-slider-item img {
@@ -267,7 +283,33 @@ header nav a:hover {
 }
 
 .quote {
-    padding: 0 7%;
+    width: 86vw;
+    max-width: 457px;
+    margin: 0 auto;
+}
+
+.current-slide-indicator {
+    padding: 22px 0 44px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.current-slide-indicator input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.current-slide-indicator input + div {
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    border: 2px solid var(--bright-red);
+}
+
+.current-slide-indicator input:checked + div {
+    background: var(--bright-red);
 }
 
 
@@ -458,6 +500,21 @@ footer .logo {
         height: 38px;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .testimonials-slider {
+        margin: 111px 0 55px;
+    }
+    .slides-container {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .testimonials-slider-item {
+        background: linear-gradient(to right, transparent 3%, var(--very-light-gray) 3% 97%, transparent 97%) ;
+        min-width: 100%;
+    }
+    .current-slide-indicator {
+        display: none;
     }
 
     .cta {

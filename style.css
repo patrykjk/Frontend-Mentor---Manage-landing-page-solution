@@ -322,7 +322,7 @@ header nav a:hover {
 
 
 .cta {
-    background: url(/images/bg-simplify-section-mobile.svg) no-repeat left / auto 255px, var(--bright-red);
+    background: url(images/bg-simplify-section-mobile.svg) no-repeat left / auto 255px, var(--bright-red);
     text-align: center;
     padding: 79px 7%;
 }
@@ -442,8 +442,8 @@ footer .logo {
     }
     body {
     background:
-        url(/images/bg-tablet-pattern.svg) no-repeat 53vw -14vw / 57vw,
-        url(/images/bg-tablet-pattern.svg) no-repeat -37vw 76vw / 57vw;
+        url(images/bg-tablet-pattern.svg) no-repeat 53vw -14vw / 57vw,
+        url(images/bg-tablet-pattern.svg) no-repeat -37vw 76vw / 57vw;
     }
 
     header {
@@ -523,7 +523,7 @@ footer .logo {
         align-items: center;
         padding: 70px 10%;
         text-align: left;
-        background: url(/images/bg-simplify-section-desktop.svg) no-repeat 15vw -122px, var(--bright-red);
+        background: url(images/bg-simplify-section-desktop.svg) no-repeat 15vw -122px, var(--bright-red);
     }
     .cta h1 {
         max-width: 22ch;
